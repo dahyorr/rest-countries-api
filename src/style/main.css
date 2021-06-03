@@ -1,0 +1,326 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+body {
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+.App {
+  background: var(--background);
+  width: 100%;
+  min-height: 100vh;
+  color: var(--text);
+}
+
+.App .Header {
+  background: var(--elements);
+  height: 65px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.App .Header .container {
+  display: flex;
+  height: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.App .Header .container .brand {
+  font-weight: 800;
+  font-size: 1.5rem;
+}
+
+.App .Header .container .theme-selector {
+  background: var(--background);
+  padding: 0.65rem 1rem;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.App .Header .container .theme-selector:hover {
+  filter: brightness(85%);
+}
+
+.App .Search {
+  margin: 2.5rem 0;
+  height: fit-content;
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+}
+
+.App .Search .search-container {
+  height: 50px;
+  width: 400px;
+  background: var(--elements);
+  border-radius: 5px;
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.App .Search .search-container:hover {
+  filter: brightness(90%);
+}
+
+.App .Search .search-container i {
+  position: absolute;
+  font-size: 1.2rem;
+  top: 15px;
+  left: 10px;
+  color: var(--text);
+}
+
+.App .Search .search-container form {
+  height: 100%;
+}
+
+.App .Search .search-container form input {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  background: var(--elements);
+  border: none;
+  color: var(--text);
+  padding: 0 10px 0 40px;
+  font-size: 1.2rem;
+}
+
+.App .Dropdown {
+  width: 200px;
+  background: var(--elements);
+  height: 100%;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.App .Dropdown .dropdown-container {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.App .Dropdown .dropdown-container i, .App .Dropdown .dropdown-container .text {
+  color: var(--text);
+}
+
+.App .Dropdown .dropdown-container .display {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background: var(--elements);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.App .Dropdown .dropdown-container .display:hover {
+  filter: brightness(90%);
+}
+
+.App .Dropdown .dropdown-container .dropdown-menu {
+  position: absolute;
+  top: 55px;
+  background: var(--elements);
+  width: 100%;
+  border-radius: 5px;
+}
+
+.App .Dropdown .dropdown-container .dropdown-menu .dropdown-item {
+  padding: 0.4rem 2rem;
+  background: var(--elements);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.App .Dropdown .dropdown-container .dropdown-menu .dropdown-item:hover {
+  filter: brightness(90%);
+}
+
+.App .Dropdown .dropdown-container .show {
+  display: block;
+}
+
+.App .Dropdown .dropdown-container .hide {
+  display: none;
+}
+
+.App .CountryList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 290px);
+  gap: 23px;
+  margin-bottom: 2rem;
+  height: 663px;
+}
+
+.App .CountryItem {
+  width: 290px;
+  height: 320px;
+  background: var(--elements);
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  cursor: pointer;
+}
+
+.App .CountryItem .img-container {
+  height: 50%;
+  border-radius: 5px 5px 0 0;
+}
+
+.App .CountryItem .img-container img {
+  height: 100%;
+  width: 100%;
+  border-radius: 5px 5px 0 0;
+}
+
+.App .CountryItem .content {
+  height: 50%;
+  padding: 0 1.5rem;
+}
+
+.App .CountryItem .content p.name {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 1rem 0;
+}
+
+.App .CountryItem .content p {
+  font-size: 0.9rem;
+}
+
+.App .CountryItem .content .bold {
+  font-weight: 600;
+}
+
+.App .Pagination {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.App .Pagination .content .page {
+  background: var(--elements);
+  border: none;
+  margin: 0 0.2rem;
+  padding: 0.7rem 1rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  color: var(--text);
+  border-radius: 5px;
+  display: inline;
+  height: 40px;
+  cursor: pointer;
+}
+
+.App .Pagination .content .space {
+  margin: 0 1rem;
+  cursor: default;
+}
+
+.App .Pagination .content .hide {
+  visibility: hidden;
+}
+
+.App .Details .controls {
+  height: 40px;
+  margin: 2.5rem 0;
+  display: flex;
+  align-items: center;
+}
+
+.App .Details .controls button {
+  color: var(--text);
+  background: var(--elements);
+  border: none;
+  padding: 0.65rem 1.75rem;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.App .Details .controls button i {
+  margin-right: 0.5rem;
+}
+
+.App .Details .content {
+  display: flex;
+  height: 500px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2.5rem 0;
+}
+
+.App .Details .content .img-container {
+  height: 370px;
+  width: 45%;
+  background: var(--elements);
+  padding: 0.85rem;
+  border-radius: 5px;
+}
+
+.App .Details .content .img-container img {
+  width: 100%;
+  height: 100%;
+}
+
+.App .Details .content .info {
+  height: 370px;
+  width: 43%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.App .Details .content .info .header {
+  margin-bottom: 1rem;
+}
+
+.App .Details .content .info .header p {
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.App .Details .content .info .info-content {
+  margin-bottom: 2.25rem;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+}
+
+.App .Details .content .info .info-content p {
+  margin: 0.25rem 0;
+}
+
+.App .Details .content .info .info-content .bold {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.App .Details .content .info .country-buttons .bold {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-right: 1rem;
+}
+
+.App .Details .content .info .country-buttons button {
+  margin: 0.25rem 0.5rem;
+  padding: 0.3rem 1.2rem;
+  background: var(--elements);
+  border: none;
+  border-radius: 5px;
+  color: var(--text);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  cursor: pointer;
+}
