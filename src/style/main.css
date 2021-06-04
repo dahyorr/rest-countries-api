@@ -9,6 +9,7 @@
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 1.5rem;
+  height: fit-content;
 }
 
 body {
@@ -19,6 +20,7 @@ body {
   background: var(--background);
   width: 100%;
   min-height: 100vh;
+  height: fit-content;
   color: var(--text);
 }
 
@@ -46,18 +48,28 @@ body {
   border-radius: 50px;
   font-weight: 600;
   cursor: pointer;
+  font-size: 0.85rem;
 }
 
 .App .Header .container .theme-selector:hover {
   filter: brightness(85%);
 }
 
+@media screen and (max-width: 500px) {
+  .App .Header .container .brand {
+    font-size: 1.125rem;
+  }
+  .App .Header .container .theme-selector {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.75rem;
+  }
+}
+
 .App .Search {
   margin: 2.5rem 0;
-  height: fit-content;
   display: flex;
   justify-content: space-between;
-  height: 50px;
+  height: fit-content;
 }
 
 .App .Search .search-container {
@@ -96,6 +108,17 @@ body {
   font-size: 1.2rem;
 }
 
+@media screen and (max-width: 500px) {
+  .App .Search {
+    margin: 2.5rem 0;
+    flex-direction: column;
+  }
+  .App .Search .search-container {
+    margin-bottom: 1.5rem;
+    width: 100%;
+  }
+}
+
 .App .Dropdown {
   width: 200px;
   background: var(--elements);
@@ -105,12 +128,13 @@ body {
 }
 
 .App .Dropdown .dropdown-container {
-  height: 100%;
+  height: 50px;
   width: 100%;
   position: relative;
 }
 
-.App .Dropdown .dropdown-container i, .App .Dropdown .dropdown-container .text {
+.App .Dropdown .dropdown-container i,
+.App .Dropdown .dropdown-container .text {
   color: var(--text);
 }
 
@@ -156,12 +180,24 @@ body {
   display: none;
 }
 
+@media screen and (max-width: 500px) {
+  .App .Dropdown {
+    font-size: 0.75rem;
+  }
+}
+
 .App .CountryList {
   display: grid;
   grid-template-columns: repeat(auto-fit, 290px);
   gap: 23px;
-  margin-bottom: 2rem;
-  height: 663px;
+  justify-content: center;
+  min-height: 663px;
+}
+
+@media screen and (max-width: 500px) {
+  .App .CountryList {
+    gap: 2.5rem;
+  }
 }
 
 .App .CountryItem {
@@ -204,7 +240,7 @@ body {
 }
 
 .App .Pagination {
-  height: 50px;
+  padding: 2rem 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -230,6 +266,17 @@ body {
 
 .App .Pagination .content .hide {
   visibility: hidden;
+}
+
+@media screen and (max-width: 500px) {
+  .App .Pagination .content .page {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.75rem;
+    height: 33px;
+  }
+  .App .Pagination .content .space {
+    margin: 0 0.5rem;
+  }
 }
 
 .App .Details .controls {
@@ -319,8 +366,63 @@ body {
   padding: 0.3rem 1.2rem;
   background: var(--elements);
   border: none;
-  border-radius: 5px;
+  border-radius: 3px;
   color: var(--text);
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .App .Details .content .img-container {
+    width: 55%;
+    height: fit-content;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .App .Details .controls {
+    margin: 2.5rem 0;
+  }
+  .App .Details .content {
+    flex-direction: column;
+    height: fit-content;
+    padding: 0;
+  }
+  .App .Details .content .img-container {
+    width: 100%;
+    height: fit-content;
+    background: var(--background);
+    padding: 0;
+    margin-bottom: 1.5rem;
+  }
+  .App .Details .content .info {
+    width: 100%;
+    height: fit-content;
+  }
+  .App .Details .content .info .header p {
+    font-size: 1.4rem;
+  }
+  .App .Details .content .info .info-content {
+    flex-direction: column;
+    font-size: 0.8rem;
+    margin-bottom: 1.5rem;
+  }
+  .App .Details .content .info .info-content .bold {
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+  .App .Details .content .info .info-content .info-right {
+    margin-top: 1.5rem;
+  }
+  .App .Details .content .info .country-buttons {
+    padding-bottom: 2.5rem;
+  }
+  .App .Details .content .info .country-buttons span.bold {
+    display: block;
+    margin-bottom: 0.75rem;
+  }
+  .App .Details .content .info .country-buttons button {
+    margin: 0.2rem 0.25rem;
+    padding: 0.3rem 0.75rem;
+  }
 }

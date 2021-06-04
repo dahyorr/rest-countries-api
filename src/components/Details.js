@@ -70,6 +70,7 @@ const Details = ({ data, displayDetails, setDetailsData, allData }) => {
 					</div>
 
 					<div className="country-buttons">
+						{data.borders.length > 0? <>
 						<span className="bold">Border Countries: </span>
 						{data.borders.map((border, index) => (
 							<button
@@ -81,6 +82,7 @@ const Details = ({ data, displayDetails, setDetailsData, allData }) => {
 								{getBorderData(border).name}
 							</button>
 						))}
+						</>: null}
 					</div>
 				</div>
 			</div>

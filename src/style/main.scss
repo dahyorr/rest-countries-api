@@ -8,6 +8,7 @@
 	max-width: 1280px;
 	margin: 0 auto;
 	padding: 0 1.5rem;
+	height: fit-content;
 }
 body {
 	font-family: 'Nunito Sans', sans-serif;
@@ -21,8 +22,8 @@ body {
 	background: $background;
 	width: 100%;
 	min-height: 100vh;
+	height: fit-content;
 	color: $text;
-
 	.Header {
 		background: $elements;
 		height: 65px;
@@ -42,8 +43,20 @@ body {
 				border-radius: 50px;
 				font-weight: 600;
 				cursor: pointer;
+				font-size: 0.85rem;
 				&:hover {
 					filter: brightness(85%);
+				}
+			}
+		}
+		@media screen and (max-width: 500px) {
+			.container {
+				.brand {
+					font-size: 1.125rem;
+				}
+				.theme-selector {
+					font-size: 0.75rem;
+					padding: 0.4rem 0.75rem;
 				}
 			}
 		}
@@ -51,10 +64,9 @@ body {
 
 	.Search {
 		margin: 2.5rem 0;
-		height: fit-content;
 		display: flex;
 		justify-content: space-between;
-		height: 50px;
+		height: fit-content;
 		.search-container {
 			height: 50px;
 			width: 400px;
@@ -86,6 +98,14 @@ body {
 				}
 			}
 		}
+		@media screen and (max-width: 500px) {
+			margin: 2.5rem 0;
+			flex-direction: column;
+			.search-container{
+				margin-bottom: 1.5rem;
+				width: 100%;
+			}
+		}
 	}
 
 	.Dropdown {
@@ -96,7 +116,7 @@ body {
 		box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
 		.dropdown-container {
-			height: 100%;
+			height: 50px;
 			width: 100%;
 			position: relative;
 
@@ -140,15 +160,20 @@ body {
 				display: none;
 			}
 		}
+		@media screen and (max-width: 500px) {
+			font-size: 0.75rem;
+		}
 	}
 
 	.CountryList {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, 290px);
 		gap: 23px;
-		// justify-content: center;
-		margin-bottom: 2rem;
-		height: 663px;
+		justify-content: center;
+		min-height: 663px;
+		@media screen and (max-width: 500px) {
+			gap: 2.5rem
+		}
 	}
 
 	.CountryItem {
@@ -185,8 +210,7 @@ body {
 	}
 
 	.Pagination {
-		// background: red;
-		height: 50px;
+		padding: 2rem 0;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -209,6 +233,19 @@ body {
 			}
 			.hide {
 				visibility: hidden;
+			}
+		}
+		@media screen and (max-width: 500px) {
+			// margin-bottom: 1.5rem;
+			.content{
+				.page{
+					padding: 0.3rem 0.6rem;
+					font-size:0.75rem;
+					height: 33px
+				}
+				.space{
+					margin: 0 0.5rem
+				}
 			}
 		}
 	}
@@ -289,10 +326,64 @@ body {
 						padding: 0.3rem 1.2rem;
 						background: $elements;
 						border: none;
-						border-radius: 5px;
+						border-radius: 3px;
 						color: $text;
 						box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 						cursor: pointer;
+					}
+				}
+			}
+		}
+		@media screen and (max-width: 768px) {
+			.content .img-container{
+				width: 55%;
+				height: fit-content;
+			}
+		}
+		@media screen and (max-width: 500px) {
+
+			.controls{
+				margin: 2.5rem 0;
+			}
+			.content{
+				flex-direction: column;
+				height: fit-content;
+				padding: 0;
+				.img-container{
+					width: 100%;
+					height: fit-content;
+					background: $background;
+					padding: 0;
+					margin-bottom: 1.5rem;
+				}
+				.info{
+					width: 100%;
+					height:fit-content; 
+					.header{
+						p{font-size: 1.4rem;}
+					}
+					.info-content{
+						flex-direction: column;
+						font-size: 0.8rem;
+						margin-bottom: 1.5rem;
+						.bold {
+							font-weight: 600;
+							font-size: 0.9rem;
+						}
+						.info-right{
+							margin-top:1.5rem;
+						}
+					}
+					.country-buttons{
+						span.bold{
+							display:block;
+							margin-bottom: 0.75rem;
+						}
+						button{
+							margin: 0.2rem 0.25rem;
+							padding: 0.3rem 0.75rem;
+						}
+						padding-bottom: 2.5rem;
 					}
 				}
 			}
