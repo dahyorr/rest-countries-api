@@ -46,9 +46,12 @@ const Search = ({
 	return (
 		<div className="Search">
 			<div className="search-container">
-				<i className="fas fa-search"></i>
+				
 				<form onSubmit={onSubmit}>
+				<button title="submit" className='submit'><i className="fas fa-search"></i></button>
 					<input
+						name="search"
+						title="Search"
 						type="text"
 						placeholder="Search for a country..."
 						value={value}

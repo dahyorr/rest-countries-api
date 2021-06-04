@@ -77,12 +77,15 @@ body {
 			&:hover {
 				filter: brightness(90%);
 			}
-			i {
+			.submit{
 				position: absolute;
 				font-size: 1.2rem;
 				top: 15px;
 				left: 10px;
 				color: $text;
+				background: transparent;
+				border: none;
+				cursor: pointer;
 			}
 			form {
 				height: 100%;

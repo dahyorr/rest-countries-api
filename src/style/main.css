@@ -85,12 +85,15 @@ body {
   filter: brightness(90%);
 }
 
-.App .Search .search-container i {
+.App .Search .search-container .submit {
   position: absolute;
   font-size: 1.2rem;
   top: 15px;
   left: 10px;
   color: var(--text);
+  background: transparent;
+  border: none;
+  cursor: pointer;
 }
 
 .App .Search .search-container form {

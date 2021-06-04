@@ -11,7 +11,7 @@ const Pagination = ({ pages, currentPage, updatePage }) => {
 		return (
 			<div className="Pagination">
 				<div className="content">
-					<button className="page" onClick={previousPage}>
+					<button className="page" title="previous" onClick={previousPage}>
 						<i className="fas fa-chevron-left"></i>
 					</button>
 					<button
@@ -43,7 +43,7 @@ const Pagination = ({ pages, currentPage, updatePage }) => {
 					>
 						{pages}
 					</button>
-					<button className="page" onClick={nextPage}>
+					<button title="next" className="page" onClick={nextPage}>
 						<i className="fas fa-chevron-right"></i>
 					</button>
 				</div>
